@@ -19,3 +19,18 @@ notepad $profile
 Set-PSReadlineOption -BellStyle None
 #　Powershellを再起動
 ```
+
+### bash on windowsでベル音を消す
+```
+echo "set bell-style none" >> ~/.inputrc
+# シェルを再起動
+```
+
+
+### bash on windows の vim でベル音を消す
+```
+echo "set visualbell t_vb=" >> ~/.vimrc
+# シェルを再起動
+```
+
+
