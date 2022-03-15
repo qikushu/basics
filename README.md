@@ -93,6 +93,14 @@ cat /proc/mdstat
 ```
 mdadm -D /dev/md0
 ```
+
+そもそものRAID構成を確認する
+```
+blkid
+mdadm --detail --scan
+```
+
+
 故障ディスク除去
 ```
 mdadm /dev/md0 -r /dev/sdd1
