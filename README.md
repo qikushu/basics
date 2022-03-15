@@ -100,6 +100,9 @@ mdadm /dev/md0 -r /dev/sdd1
 新規ディスク追加
 ```
 mdadm /dev/md0 --add /dev/sdd1
+# チェック
+mdadm -D /dev/md0
+
 ```
 
 状態チェック
