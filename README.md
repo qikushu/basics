@@ -95,7 +95,7 @@ mdadm -D /dev/md0
 ```
 故障ディスク除去
 ```
-dadm /dev/md0 -r /dev/sdd1
+mdadm /dev/md0 -r /dev/sdd1
 ```
 新規ディスク追加
 ```
