@@ -85,36 +85,21 @@ rsync -auvz --remove-source-files --partial --progress file dir/
 ```
 
 ## RAID
-状態チェック
 ```
+#状態チェック
 cat /proc/mdstat
-```
-状態チェック2
-```
+#状態チェック2
 mdadm -D /dev/md0
-```
-
-そもそものRAID構成を確認する
-```
+#そもそものRAID構成を確認する
 blkid
 mdadm --detail --scan
-```
-
-
-故障ディスク除去
-```
+#故障ディスク除去
 mdadm /dev/md0 -r /dev/sdd1
-```
-新規ディスク追加
-```
+#新規ディスク追加
 mdadm /dev/md0 --add /dev/sdd1
 # チェック
 mdadm -D /dev/md0
-
-```
-
-状態チェック
-```
+#状態チェック
 cat /proc/mdstat
 ```
-UUIDはどうなるのだろうか
+
