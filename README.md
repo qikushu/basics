@@ -67,7 +67,7 @@ vi ~/.discolors
 # シェルを再起動
 ```
  
-## rSync　　サーバー間通信の場合
+## rsync　　サーバー間通信の場合
 
 サーバー間通信の時には、ディレクトリごと指定すると、ファイルの転送サイズが巨大化し、通信がタイムアウトになる可能性がある。
 ファイルごとrsyncを実行することにした。nohupなどしてほったらかした後、あとでのこのこ来た時に、転送に失敗したファイルは残っている。
@@ -84,4 +84,26 @@ rsync -auvz --remove-source-files --partial --progress file dir/
 --partial 転送が中断したファイルを、途中から転送する。
 ```
 
+## RAID
+状態チェック
+```
+cat /proc/mdstat
+```
+状態チェック2
+```
+mdadm -D /dev/md0
+```
+故障ディスク除去
+```
+dadm /dev/md0 -r /dev/sdd1
+```
+新規ディスク追加
+```
+mdadm /dev/md0 --add /dev/sdd1
+```
 
+状態チェック
+```
+cat /proc/mdstat
+```
+UUIDはどうなるのだろうか
