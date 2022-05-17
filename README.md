@@ -103,3 +103,23 @@ mdadm -D /dev/md0
 cat /proc/mdstat
 ```
 
+## jbrowse2
+Do not run below commands at your jbrowse2 directory
+```
+wget ref.fa.gz
+gunzip ref.fa.gz
+samtools faidx ref.fa
+jbrowse add-assembly ref.fa --load copy --name mygenome1 --out /jbrowse2/insatall/dir
+
+wget mygenome.gff.gz
+gunzip mygenome.gff.gz
+git clone https://github.com/billzt/gff3sort.git
+gff3sort/gff3sort.pl mygenome.gff > bgzip -c mygenome.sorted.gff.gz
+jbrowse add-track mygenome.gff.gz --load copy --name myanno --assemblyNames mygenome1 --out /jbrowse2/insatall/dir
+
+# for confirmation
+jbrowse admin-server
+
+jbrowse upgrade
+
+```
