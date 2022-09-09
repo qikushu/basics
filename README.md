@@ -121,5 +121,9 @@ jbrowse add-track mygenome.gff.gz --load copy --name myanno --assemblyNames myge
 jbrowse admin-server
 
 jbrowse upgrade
+```
 
+## pdftoppm
+```
+pdftoppm -png -singlefile A.pdf B
 ```
