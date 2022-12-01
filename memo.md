@@ -5,7 +5,10 @@
 sudo a2enmod cgid
 sudo a2enmod userdir
 sudo a2enmod include
-systemctl restart apache2
+sudo apt install apache2-suexec-custom
+sudo a2enmod suexec
+sudo systemctl restart apache2
+
 ```
 
 `conf-available/cgi-enabled.conf`を新規作成
@@ -24,24 +27,8 @@ sudo systemctl restart apache2
 ### ファイルのパーミッション
 ```
 chmod 755 test.pl
+chrmod 755 dir
 ```
-
-
-
-
-### cgi.load モジュールを読み込むようにする
-mods-availableのcgi.loadを mods-enableにシンボリックリンクをはる。
-```
-sudo ln -s /etc/apache2/mods-available/cgi.load /etc/apache2/mods-enabled/cgi.load
-```
-
-### siteにcgiの利用を許可
-sites-available/000-default.confの以下のコメントを外す
-```
-#Include conf-available/serve-cgi-bin.conf
-```
-000-defaultだとサイト全体に効く
-
 
 
 ### トラブルシューティング
