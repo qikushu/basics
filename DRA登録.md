@@ -3,9 +3,10 @@
 Submission 1 vs 多 Experiment (Biosample)の関係で紐づけられますExperiment
 (Biosample) 1 vs 多 Run の関係で紐づけられます  Run 1 vs 多 Run_file (fastq) の関係で紐づけられます  
 
+| --- | --- | --- |
 
-|DRX|Experiment|Biosampleをどのように解読したのか|
-|DRR|Run|配列データ|
+| DRX | Experiment | Biosampleをどのように解読したのか |
+| DRR | Run | 配列データ |
 
 
 
