@@ -66,14 +66,15 @@ vi ~/.discolors
 
 # シェルを再起動
 ```
+
+
+### あるディレクトリ以下のファイルあるいはディレクトリをリードオンリーにする
+```
 # ディレクトリの場合
 find /path/to/directory -type d -exec chmod a-w {} \;
 # ファイルの場合
 find /path/to/directory -type f -exec chmod a-w {} \;
 ```
-
-### あるディレクトリ以下のファイルあるいはディレクトリをリードオンリーにする
-
 
 ## rsync　　サーバー間通信の場合
 
