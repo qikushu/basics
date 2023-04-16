@@ -66,7 +66,15 @@ vi ~/.discolors
 
 # シェルを再起動
 ```
- 
+# ディレクトリの場合
+find /path/to/directory -type d -exec chmod a-w {} \;
+# ファイルの場合
+find /path/to/directory -type f -exec chmod a-w {} \;
+```
+
+### あるディレクトリ以下のファイルあるいはディレクトリをリードオンリーにする
+
+
 ## rsync　　サーバー間通信の場合
 
 サーバー間通信の時には、ディレクトリごと指定すると、ファイルの転送サイズが巨大化し、通信がタイムアウトになる可能性がある。
