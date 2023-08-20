@@ -154,6 +154,6 @@ blastp -query protein.fa -db db_prot.txt -evalue 1e-12 -out out.txt
 
 # 塩基配列
 makeblastdb -in nuc.fa -dbtype nucl
-blastn -query query.fa -db nuc.fa -evalue 1e-12 -out out.txt
+blastn -query query.fa -db nuc.fa -evalue 1e-12 -out out.txt -outfmt 6
 ```
 
