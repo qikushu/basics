@@ -144,4 +144,16 @@ for i in 01 02 03 04 05 06 07 08 09 10 11 12 ; do
 done
 ```
 
+## blast関係
+```
+## タンパク質
+# database構築
+makeblastdb -in protein.fa -dbtype prot
+# blastp
+blastp -query protein.fa -db db_prot.txt -evalue 1e-12 -out out.txt
+
+# 塩基配列
+makeblastdb -in nuc.fa -dbtype nucl
+blastn -query query.fa -db nuc.fa -evalue 1e-12 -out out.txt
+```
 
